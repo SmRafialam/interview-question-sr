@@ -53,5 +53,4 @@ Route::group(['prefix'=>'/admin'],function(){
         });
     });
     
-    
     // Route::get('users', [UserController::class, 'index']);

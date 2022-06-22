@@ -91,7 +91,8 @@
                   
           </div>
         </div>
-      
+
+        
         <div class="container border">
             <div class="row row-sm">
                 <div class="col-sm-6">
@@ -113,7 +114,87 @@
                 </div>
             </div>
         </div>
-        <form action=" {{Route('store')}} " method="POST">
+       
+        
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <p class="h5 mb-0 text-gray-800 my-2">Variants</p>
+    </div>
+            
+        <div class="br-pagebodyn">
+        <div class="row row-sm">
+          <div class="col-sm-6">
+              <div class="card p-3 shadow-base">
+                <form action=" {{Route('create')}} " method="post">
+                    @csrf
+                    <div class="row">
+                        <div class="col-md-6">
+                        <div class="form-group">
+                                <label for="category">Option</label>
+                                <select class="form-control" name="category">
+                                    <option value="">Color</option>
+                                    <option value="red">red</option>
+                                    <option value="green">green</option>
+                                    <option value="blue">blue</option>
+                                </select>
+                            </div>
+                            <a href=""><input type="text"></a>
+                            <div class="form-group">
+                                <label for="size">option</label>
+                                <select class="form-control" name="size" id="size">
+                                    <option value="">Size</option>
+                                    <option value="XL">XL</option>
+                                    <option value="M">M</option>
+                                    <option value="SM">SM</option>
+                                </select>
+                                <a href=""><input type="text"></a>
+                            </div>
+                            <div class="form-group">
+                                <button class="form-control btn btn-info">Add Another Option</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+              </div>
+              </div>   
+          </div>
+        </div>
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <p class="h5 mb-0 text-gray-800 my-2">Preview</p>
+    </div>
+      <table class="table">
+  <thead>
+    <tr>
+     
+      <th scope="col">Variant</th>
+      <th scope="col">Price</th>
+      <th scope="col">Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Red/ sm/</th>
+      <td><input type="text" placeholder="0"></td>
+      <td><input type="text" placeholder="0"></td>
+     
+    </tr>
+    <tr>
+      <th scope="row">Red/xl/</th>
+      <td><input type="text" placeholder="0"></td>
+      <td><input type="text" placeholder="0"></td>
+    </tr>
+    <tr>
+      <th scope="row">green/sm/</th>
+      <td><input type="text" placeholder="0"></td>
+      <td><input type="text" placeholder="0"></td>
+    </tr>
+    <tr>
+      <th scope="row">green/xl/</th>
+      <td><input type="text" placeholder="0"></td>
+      <td><input type="text" placeholder="0"></td>
+    </tr>
+  </tbody>
+</table>
+<form action=" {{Route('store')}} " method="POST">
                     @csrf
                     @method('GET')
         <div class="form-group d-flex  justify-content-start my-2 py-5">
@@ -121,7 +202,8 @@
             <button class="form-control btn bg-secondary" style='width:100px;'>Cancel</button>
         </div>
     </form>
-        </div>
+</div>
+
 
 
         
