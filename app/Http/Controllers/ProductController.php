@@ -17,7 +17,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('products.index');
+        $products = Product::orderby('id','asc')->get();
+        return view('products.index',compact('products'));
     }
 
     /**
@@ -64,12 +65,12 @@ class ProductController extends Controller
         $data = $all->all();
         print_r($data);
 
-        // $product = new Product();
-        // $product->title = $all->title;
-        // $product->sku = $all->sku;
-        // $product->description = $all->description;
-        // $product->save();
-        // return redirect()->route('index');
+        $product = new Product();
+        $product->title = $all->title;
+        $product->sku = $all->sku;
+        $product->description = $all->description;
+        $product->save();
+        return redirect()->route('index');
     }
 
 
@@ -90,7 +91,7 @@ class ProductController extends Controller
      * @param \App\Models\Product $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
         $variants = Variant::all();
         return view('products.edit', compact('variants'));
@@ -103,9 +104,14 @@ class ProductController extends Controller
      * @param \App\Models\Product $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $all, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->title = $all->title;
+        $product->sku = $all->sku;
+        $product->description = $all->description;
+        $product->update();
+        return redirect()->route('manage');
     }
 
     /**

@@ -49,8 +49,9 @@
         <div class="row row-sm">
           <div class="col-sm-6">
               <div class="card p-3 shadow-base">
-                <form action=" {{Route('store')}} " method="post">
+                <form action="{{Route('store')}}" method="POST">
                     @csrf
+                   
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -101,6 +102,7 @@
                         <div class="card-body2">
                             <form method="POST" action="{{ Route('dropzonestore') }}" enctype="multipart/form-data" class="dropzone dz-clickable" id="image-upload">
                             @csrf
+                        
                             <div>
                                 <h3 class="text-danger">Dropzone</h3>
                                 <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
@@ -111,14 +113,18 @@
                 </div>
             </div>
         </div>
-        <form action=" {{Route('store')}} " method="post">
+        <form action=" {{Route('store')}} " method="POST">
                     @csrf
+                    @method('GET')
         <div class="form-group d-flex  justify-content-start my-2 py-5">
             <button class="form-control btn-sm btn-info mx-2 " style='width:100px;'>Save</button>
             <button class="form-control btn bg-secondary" style='width:100px;'>Cancel</button>
         </div>
     </form>
         </div>
+
+
+        
       <div class="card-footer">
             <div class="row justify-content-between">
                 <div class="col-md-6">

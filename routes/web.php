@@ -36,7 +36,7 @@ Route::group(['prefix'=>'/admin'],function(){
         Route::group(['prefix'=>'/product'],function(){
             Route::get('/store','App\Http\Controllers\ProductController@store')->middleware(['auth'])->name('store');
 
-            Route::get('/create','App\Http\Controllers\ProductController@create')->middleware(['auth'])->name('create');
+            Route::post('/create','App\Http\Controllers\ProductController@create')->middleware(['auth'])->name('create');
     
             Route::get('/manage','App\Http\Controllers\ProductController@index')->middleware(['auth'])->name('manage');
     
@@ -48,9 +48,10 @@ Route::group(['prefix'=>'/admin'],function(){
 
            // Route::get('/dropzone','App\Http\Controllers\ProductController@dropzone')->middleware(['auth'])->name('dropzone');
 
-            Route::get('/dropzonestore','App\Http\Controllers\ProductController@dropzonestore')->middleware(['auth'])->name('dropzonestore');
+            Route::post('/dropzonestore','App\Http\Controllers\ProductController@dropzonestore')->middleware(['auth'])->name('dropzonestore');
 
         });
     });
+    
     
     // Route::get('users', [UserController::class, 'index']);
