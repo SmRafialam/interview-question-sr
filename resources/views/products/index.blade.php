@@ -15,7 +15,14 @@
                 </div>
                 <div class="col-md-2">
                     <select name="variant" id="" class="form-control">
-
+                        <option value="" class="text-secondary">-------Color-------</option>
+                        <option value="red">red</option>
+                        <option value="green">green</option>
+                        <option value="blue">blue</option>
+                        <option value="" class="text-secondary">-------Size--------</option>
+                        <option value="XL">XL</option>
+                        <option value="M">M</option>
+                        <option value="SM">SM</option>
                     </select>
                 </div>
 
@@ -54,18 +61,62 @@
 
                     <tr>
                         <td>1</td>
-                        <td>T-Shirt <br> Created at : 25-Aug-2020</td>
-                        <td>Quality product in low cost</td>
+                        <td>Product Name <br> Created at : 8 hours ago</td>
+                        <td>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)</td>
                         <td>
-                            <dl class="row mb-0" style="height: 80px; overflow: hidden" id="variant">
+                            <dl class="row mb-0" style="height: 40px; width: 100%; overflow: hidden" id="variant">
 
-                                <dt class="col-sm-3 pb-0">
-                                    SM/ Red/ V-Nick
+                                <dt class="col-sm-2 pb-0 d-flex justify-content-between">
+                                    red/ red /
+                                    
                                 </dt>
-                                <dd class="col-sm-9">
+                                <dt class="col-sm-2 pb-0 d-flex justify-content-between">
+                                    xl/ sm/
+                                </dt>
+                                <dd class="col-sm-8">
                                     <dl class="row mb-0">
-                                        <dt class="col-sm-4 pb-0">Price : {{ number_format(200,2) }}</dt>
-                                        <dd class="col-sm-8 pb-0">InStock : {{ number_format(50,2) }}</dd>
+                                        <dt class="col-sm-4 pb-0">Price : {{ number_format(150.00,2) }}</dt>
+                                        <dt class="col-sm-4 pb-0 ">Price : {{ number_format(15.00,2) }}</dt>
+                                        
+                                    </dl>
+                                    <dl>
+                                    <dd class="col-sm-8 pb-0 ">InStock : {{ number_format(150.00,2) }}</dd>
+                                    <dd class="col-sm-8 pb-0 ">InStock : {{ number_format(54.00,2) }}</dd>
+                                    </dl>
+                                </dd>
+                            </dl>
+                            <button onclick="$('#variant').toggleClass('h-auto')" class="btn btn-sm btn-link">Show more</button>
+                        </td>
+                        <td>
+                            <div class="btn-group btn-group-sm">
+                                <a href="{{ route('product.edit', 1) }}" class="btn btn-success">Edit</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Product Two <br> Created at : 1 hour ago</td>
+                        <td>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)</td>
+                        <td>
+                            <dl class="row mb-0" style="height: 40px; width: 100%; overflow: hidden" id="variant">
+
+                                <dt class="col-sm-2 pb-0 d-flex justify-content-between">
+                                    red/ red /
+                                    
+                                </dt>
+                                <dt class="col-sm-2 pb-0 d-flex justify-content-between">
+                                    xl/ sm/
+                                </dt>
+                                <dd class="col-sm-8">
+                                    <dl class="row mb-0">
+                                        <dt class="col-sm-4 pb-0">Price : {{ number_format(150.00,2) }}</dt>
+                                        <dt class="col-sm-4 pb-0 ">Price : {{ number_format(15.00,2) }}</dt>
+                                        
+                                    </dl>
+                                    <dl>
+                                    <dd class="col-sm-8 pb-0 ">InStock : {{ number_format(150.00,2) }}</dd>
+                                    <dd class="col-sm-8 pb-0 ">InStock : {{ number_format(15.00,2) }}</dd>
                                     </dl>
                                 </dd>
                             </dl>

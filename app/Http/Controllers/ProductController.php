@@ -31,15 +31,45 @@ class ProductController extends Controller
         return view('products.create', compact('variants'));
     }
 
+    public function dropzone(){
+        return view('product');
+    }
+
+    public function dropzonestore(Request $request){
+        $image = $request->file('file');
+        $imgCustomName = time().'.'.$image->getClientOriginalExtension();
+        $image->move(public_path('images').$imgCustomName);
+        //$location = public_path('images'.$imgCustomName);
+        //Image::make($image)->save($location);
+        // $dropzoneStore->image = $imgCustomName;
+        // $dropzoneStore->save();
+        // return redirect()->route('subcategorymanage');
+        return response()->json(['success'=>$imgCustomName]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
+    public function store(Request $all)
     {
+        $all->validate([
+            'title' => 'required',
+            'sku' => 'required',
+            'description' => 'required',
 
+        ]);
+        $data = $all->all();
+        print_r($data);
+
+        // $product = new Product();
+        // $product->title = $all->title;
+        // $product->sku = $all->sku;
+        // $product->description = $all->description;
+        // $product->save();
+        // return redirect()->route('index');
     }
 
 
